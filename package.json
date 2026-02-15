@@ -1,6 +1,6 @@
 {
-	"name": "@kim-yeo/ui",
-	"version": "0.0.0",
+	"name": "@kim-yeo-appweb-lab/ui",
+	"version": "0.1.0",
 	"description": "범용 디자인 시스템 - React 19 + Tailwind CSS 4 UI 컴포넌트 라이브러리",
 	"keywords": [
 		"react",
@@ -10,13 +10,13 @@
 		"tailwindcss",
 		"typescript"
 	],
-	"homepage": "https://kim-yeo-appweb-lab.github.io/kim-yeo-ui/",
+	"homepage": "https://kim-yeo-appweb-lab.github.io/kim-yeo-appweb-lab-ui/",
 	"bugs": {
-		"url": "https://github.com/kim-yeo-appweb-lab/kim-yeo-ui/issues"
+		"url": "https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kim-yeo-appweb-lab/kim-yeo-ui.git"
+		"url": "https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui.git"
 	},
 	"license": "MIT",
 	"author": "kim-yeo-appweb-lab",
