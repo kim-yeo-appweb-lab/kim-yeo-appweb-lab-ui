@@ -1,5 +1,5 @@
 ---
-"@kim-yeo/ui": major
+"@kim-yeo-appweb-lab/ui": major
 ---
 
 🎉 Initial release

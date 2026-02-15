@@ -1,6 +1,6 @@
 # 문서
 
-@kim-yeo/ui 디자인 시스템 문서 모음입니다.
+@kim-yeo-appweb-lab/ui 디자인 시스템 문서 모음입니다.
 
 ## 목차
 
@@ -28,5 +28,5 @@ Storybook에서 확인 가능한 디자인 시스템 기초 문서:
 
 - [Storybook](https://kim-yeo-appweb-lab.github.io/kim-yeo-ui/) - 컴포넌트 라이브러리 데모
 - [GitHub](https://github.com/kim-yeo-appweb-lab/kim-yeo-ui) - 소스 코드 저장소
-- [npm](https://www.npmjs.com/package/@kim-yeo/ui) - npm 패키지
+- [npm](https://www.npmjs.com/package/@kim-yeo-appweb-lab/ui) - npm 패키지
 - [Issues](https://github.com/kim-yeo-appweb-lab/kim-yeo-ui/issues) - 이슈 트래커
