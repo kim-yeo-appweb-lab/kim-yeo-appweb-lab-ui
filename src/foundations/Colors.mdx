@@ -1,0 +1,225 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+3계층 토큰 구조(Raw → Alias → Semantic)로 관리되는 색상 시스템입니다.
+
+---
+
+## Raw 팔레트 (Primitive)
+
+브랜드와 무관한 순수 색상 스케일입니다. `@theme` 블록에 정적으로 등록되어 `bg-primary-500`, `text-neutral-700` 등의 Tailwind 유틸리티 클래스를 생성합니다.
+
+### Primary (코랄 오렌지)
+
+<ColorPalette>
+	<ColorItem title="primary-50" subtitle="#fff5f2" colors={["#fff5f2"]} />
+	<ColorItem title="primary-100" subtitle="#ffe8e1" colors={["#ffe8e1"]} />
+	<ColorItem title="primary-200" subtitle="#ffd0c3" colors={["#ffd0c3"]} />
+	<ColorItem title="primary-300" subtitle="#ffae97" colors={["#ffae97"]} />
+	<ColorItem title="primary-400" subtitle="#ff8b6b" colors={["#ff8b6b"]} />
+	<ColorItem title="primary-500" subtitle="#ff6b47 — 브랜드 기본" colors={["#ff6b47"]} />
+	<ColorItem title="primary-600" subtitle="#f04e2a" colors={["#f04e2a"]} />
+	<ColorItem title="primary-700" subtitle="#cc3a1a" colors={["#cc3a1a"]} />
+	<ColorItem title="primary-800" subtitle="#a8301a" colors={["#a8301a"]} />
+	<ColorItem title="primary-900" subtitle="#8a2d1c" colors={["#8a2d1c"]} />
+	<ColorItem title="primary-950" subtitle="#4c1309" colors={["#4c1309"]} />
+</ColorPalette>
+
+### Secondary (딥 틸)
+
+코랄 오렌지의 보색(~180도 반대)으로, 신뢰감과 안정감을 전달합니다.
+
+<ColorPalette>
+	<ColorItem title="secondary-50" subtitle="#f0fdfb" colors={["#f0fdfb"]} />
+	<ColorItem title="secondary-100" subtitle="#ccfbf1" colors={["#ccfbf1"]} />
+	<ColorItem title="secondary-200" subtitle="#99f6e4" colors={["#99f6e4"]} />
+	<ColorItem title="secondary-300" subtitle="#5eead4" colors={["#5eead4"]} />
+	<ColorItem title="secondary-400" subtitle="#2dd4bf" colors={["#2dd4bf"]} />
+	<ColorItem title="secondary-500" subtitle="#14b8a6 — 보조 기본" colors={["#14b8a6"]} />
+	<ColorItem title="secondary-600" subtitle="#0d9488" colors={["#0d9488"]} />
+	<ColorItem title="secondary-700" subtitle="#0f766e" colors={["#0f766e"]} />
+	<ColorItem title="secondary-800" subtitle="#115e59" colors={["#115e59"]} />
+	<ColorItem title="secondary-900" subtitle="#134e4a" colors={["#134e4a"]} />
+	<ColorItem title="secondary-950" subtitle="#042f2e" colors={["#042f2e"]} />
+</ColorPalette>
+
+### Neutral (회색 스케일)
+
+<ColorPalette>
+	<ColorItem title="neutral-0" subtitle="#ffffff" colors={["#ffffff"]} />
+	<ColorItem title="neutral-50" subtitle="#fafafa" colors={["#fafafa"]} />
+	<ColorItem title="neutral-100" subtitle="#f4f4f5" colors={["#f4f4f5"]} />
+	<ColorItem title="neutral-200" subtitle="#e4e4e7" colors={["#e4e4e7"]} />
+	<ColorItem title="neutral-300" subtitle="#d4d4d8" colors={["#d4d4d8"]} />
+	<ColorItem title="neutral-400" subtitle="#a1a1aa" colors={["#a1a1aa"]} />
+	<ColorItem title="neutral-500" subtitle="#71717a" colors={["#71717a"]} />
+	<ColorItem title="neutral-600" subtitle="#52525b" colors={["#52525b"]} />
+	<ColorItem title="neutral-700" subtitle="#3f3f46" colors={["#3f3f46"]} />
+	<ColorItem title="neutral-800" subtitle="#27272a" colors={["#27272a"]} />
+	<ColorItem title="neutral-900" subtitle="#18181b" colors={["#18181b"]} />
+	<ColorItem title="neutral-950" subtitle="#0a0a0a" colors={["#0a0a0a"]} />
+</ColorPalette>
+
+### Success (녹색)
+
+<ColorPalette>
+	<ColorItem title="success-50" subtitle="#f0fdf4" colors={["#f0fdf4"]} />
+	<ColorItem title="success-100" subtitle="#dcfce7" colors={["#dcfce7"]} />
+	<ColorItem title="success-200" subtitle="#bbf7d0" colors={["#bbf7d0"]} />
+	<ColorItem title="success-300" subtitle="#86efac" colors={["#86efac"]} />
+	<ColorItem title="success-400" subtitle="#4ade80" colors={["#4ade80"]} />
+	<ColorItem title="success-500" subtitle="#22c55e" colors={["#22c55e"]} />
+	<ColorItem title="success-600" subtitle="#16a34a" colors={["#16a34a"]} />
+	<ColorItem title="success-700" subtitle="#15803d" colors={["#15803d"]} />
+	<ColorItem title="success-800" subtitle="#166534" colors={["#166534"]} />
+	<ColorItem title="success-900" subtitle="#14532d" colors={["#14532d"]} />
+	<ColorItem title="success-950" subtitle="#052e16" colors={["#052e16"]} />
+</ColorPalette>
+
+### Warning (황색)
+
+<ColorPalette>
+	<ColorItem title="warning-50" subtitle="#fefce8" colors={["#fefce8"]} />
+	<ColorItem title="warning-100" subtitle="#fef9c3" colors={["#fef9c3"]} />
+	<ColorItem title="warning-200" subtitle="#fef08a" colors={["#fef08a"]} />
+	<ColorItem title="warning-300" subtitle="#fde047" colors={["#fde047"]} />
+	<ColorItem title="warning-400" subtitle="#facc15" colors={["#facc15"]} />
+	<ColorItem title="warning-500" subtitle="#eab308" colors={["#eab308"]} />
+	<ColorItem title="warning-600" subtitle="#ca8a04" colors={["#ca8a04"]} />
+	<ColorItem title="warning-700" subtitle="#a16207" colors={["#a16207"]} />
+	<ColorItem title="warning-800" subtitle="#854d0e" colors={["#854d0e"]} />
+	<ColorItem title="warning-900" subtitle="#713f12" colors={["#713f12"]} />
+	<ColorItem title="warning-950" subtitle="#422006" colors={["#422006"]} />
+</ColorPalette>
+
+### Danger (적색)
+
+<ColorPalette>
+	<ColorItem title="danger-50" subtitle="#fef2f2" colors={["#fef2f2"]} />
+	<ColorItem title="danger-100" subtitle="#fee2e2" colors={["#fee2e2"]} />
+	<ColorItem title="danger-200" subtitle="#fecaca" colors={["#fecaca"]} />
+	<ColorItem title="danger-300" subtitle="#fca5a5" colors={["#fca5a5"]} />
+	<ColorItem title="danger-400" subtitle="#f87171" colors={["#f87171"]} />
+	<ColorItem title="danger-500" subtitle="#ef4444" colors={["#ef4444"]} />
+	<ColorItem title="danger-600" subtitle="#dc2626" colors={["#dc2626"]} />
+	<ColorItem title="danger-700" subtitle="#b91c1c" colors={["#b91c1c"]} />
+	<ColorItem title="danger-800" subtitle="#991b1b" colors={["#991b1b"]} />
+	<ColorItem title="danger-900" subtitle="#7f1d1d" colors={["#7f1d1d"]} />
+	<ColorItem title="danger-950" subtitle="#450a0a" colors={["#450a0a"]} />
+</ColorPalette>
+
+### Info (청색)
+
+<ColorPalette>
+	<ColorItem title="info-50" subtitle="#eff6ff" colors={["#eff6ff"]} />
+	<ColorItem title="info-100" subtitle="#dbeafe" colors={["#dbeafe"]} />
+	<ColorItem title="info-200" subtitle="#bfdbfe" colors={["#bfdbfe"]} />
+	<ColorItem title="info-300" subtitle="#93c5fd" colors={["#93c5fd"]} />
+	<ColorItem title="info-400" subtitle="#60a5fa" colors={["#60a5fa"]} />
+	<ColorItem title="info-500" subtitle="#3b82f6" colors={["#3b82f6"]} />
+	<ColorItem title="info-600" subtitle="#2563eb" colors={["#2563eb"]} />
+	<ColorItem title="info-700" subtitle="#1d4ed8" colors={["#1d4ed8"]} />
+	<ColorItem title="info-800" subtitle="#1e40af" colors={["#1e40af"]} />
+	<ColorItem title="info-900" subtitle="#1e3a8a" colors={["#1e3a8a"]} />
+	<ColorItem title="info-950" subtitle="#172554" colors={["#172554"]} />
+</ColorPalette>
+
+---
+
+## Semantic 토큰 (역할 기반)
+
+`@theme inline` + `:root` CSS 변수로 정의됩니다. 다크모드 전환 시 이 레이어의 값만 변경됩니다.
+
+### 텍스트 (Text)
+
+<ColorPalette>
+	<ColorItem title="fg" subtitle="기본 텍스트" colors={{ Light: "#18181b", Dark: "#f4f4f5" }} />
+	<ColorItem title="fg-secondary" subtitle="보조 텍스트" colors={{ Light: "#52525b", Dark: "#a1a1aa" }} />
+	<ColorItem title="fg-muted" subtitle="흐린 텍스트, 플레이스홀더" colors={{ Light: "#a1a1aa", Dark: "#71717a" }} />
+	<ColorItem title="fg-inverse" subtitle="반전 텍스트 (버튼 위)" colors={{ Light: "#fafafa", Dark: "#18181b" }} />
+	<ColorItem title="fg-disabled" subtitle="비활성 텍스트" colors={{ Light: "#d4d4d8", Dark: "#3f3f46" }} />
+</ColorPalette>
+
+### 배경 (Background)
+
+<ColorPalette>
+	<ColorItem title="bg" subtitle="페이지 배경" colors={{ Light: "#fafafa", Dark: "#0a0a0a" }} />
+	<ColorItem title="surface" subtitle="카드/패널 배경" colors={{ Light: "#ffffff", Dark: "#18181b" }} />
+	<ColorItem title="surface-alt" subtitle="대체 표면" colors={{ Light: "#f4f4f5", Dark: "#27272a" }} />
+	<ColorItem title="elevated" subtitle="떠있는 요소" colors={{ Light: "#ffffff", Dark: "#27272a" }} />
+	<ColorItem title="brand-bg" subtitle="브랜드 배경" colors={{ Light: "#ff6b47", Dark: "#f04e2a" }} />
+	<ColorItem title="subtle" subtitle="미세한 배경" colors={{ Light: "#f4f4f5", Dark: "#27272a" }} />
+</ColorPalette>
+
+### 보더 (Border)
+
+<ColorPalette>
+	<ColorItem title="border" subtitle="기본 보더" colors={{ Light: "#e4e4e7", Dark: "#27272a" }} />
+	<ColorItem title="border-alt" subtitle="미세한 보더" colors={{ Light: "#f4f4f5", Dark: "#3f3f46" }} />
+	<ColorItem title="border-strong" subtitle="강조 보더" colors={{ Light: "#d4d4d8", Dark: "#52525b" }} />
+	<ColorItem title="ring" subtitle="포커스 링" colors={{ Light: "#ff6b47", Dark: "#ff6b47" }} />
+</ColorPalette>
+
+### 인터랙티브 — Primary
+
+<ColorPalette>
+	<ColorItem title="primary" subtitle="CTA 기본" colors={{ Light: "#ff6b47", Dark: "#ff8b6b" }} />
+	<ColorItem title="primary-hover" subtitle="CTA 호버" colors={{ Light: "#f04e2a", Dark: "#ff6b47" }} />
+	<ColorItem title="primary-active" subtitle="CTA 클릭" colors={{ Light: "#cc3a1a", Dark: "#ffae97" }} />
+	<ColorItem title="primary-disabled" subtitle="CTA 비활성" colors={{ Light: "#ffd0c3", Dark: "#4c1309" }} />
+	<ColorItem title="primary-fg" subtitle="CTA 텍스트" colors={{ Light: "#ffffff", Dark: "#0a0a0a" }} />
+</ColorPalette>
+
+### 인터랙티브 — Secondary
+
+<ColorPalette>
+	<ColorItem title="secondary" subtitle="보조 CTA" colors={{ Light: "#14b8a6", Dark: "#2dd4bf" }} />
+	<ColorItem title="secondary-hover" subtitle="보조 호버" colors={{ Light: "#0d9488", Dark: "#14b8a6" }} />
+	<ColorItem title="secondary-active" subtitle="보조 클릭" colors={{ Light: "#0f766e", Dark: "#5eead4" }} />
+</ColorPalette>
+
+### 상태 (Status)
+
+PRD 정의에 따른 이슈/사건 상태 색상:
+
+<ColorPalette>
+	<ColorItem title="status-ongoing" subtitle="진행중" colors={{ Light: "#ef4444", Dark: "#f87171" }} />
+	<ColorItem title="status-ongoing-bg" subtitle="진행중 배경" colors={{ Light: "#fef2f2", Dark: "#450a0a" }} />
+	<ColorItem title="status-closed" subtitle="종결" colors={{ Light: "#22c55e", Dark: "#4ade80" }} />
+	<ColorItem title="status-closed-bg" subtitle="종결 배경" colors={{ Light: "#f0fdf4", Dark: "#052e16" }} />
+	<ColorItem title="status-reignited" subtitle="재점화" colors={{ Light: "#eab308", Dark: "#facc15" }} />
+	<ColorItem title="status-reignited-bg" subtitle="재점화 배경" colors={{ Light: "#fefce8", Dark: "#422006" }} />
+	<ColorItem title="status-unverified" subtitle="확인필요" colors={{ Light: "#ff6b47", Dark: "#ff8b6b" }} />
+	<ColorItem title="status-unverified-bg" subtitle="확인필요 배경" colors={{ Light: "#fff5f2", Dark: "#4c1309" }} />
+</ColorPalette>
+
+### 배지 (Badge)
+
+<ColorPalette>
+	<ColorItem
+		title="badge-breaking / badge-breaking-bg"
+		subtitle="속보"
+		colors={{ "Text (Light)": "#3b82f6", "Bg (Light)": "#eff6ff", "Text (Dark)": "#60a5fa", "Bg (Dark)": "#172554" }}
+	/>
+	<ColorItem
+		title="badge-urgent / badge-urgent-bg"
+		subtitle="긴급"
+		colors={{ "Text (Light)": "#ef4444", "Bg (Light)": "#fef2f2", "Text (Dark)": "#f87171", "Bg (Dark)": "#450a0a" }}
+	/>
+	<ColorItem
+		title="badge-new / badge-new-bg"
+		subtitle="NEW"
+		colors={{ "Text (Light)": "#22c55e", "Bg (Light)": "#f0fdf4", "Text (Dark)": "#4ade80", "Bg (Dark)": "#052e16" }}
+	/>
+</ColorPalette>
+
+### 순위 변동 (Rank)
+
+<ColorPalette>
+	<ColorItem title="rank-up" subtitle="순위 상승" colors={{ Light: "#ef4444", Dark: "#f87171" }} />
+	<ColorItem title="rank-down" subtitle="순위 하락" colors={{ Light: "#3b82f6", Dark: "#60a5fa" }} />
+	<ColorItem title="rank-neutral" subtitle="변동 없음" colors={{ Light: "#a1a1aa", Dark: "#71717a" }} />
+</ColorPalette>

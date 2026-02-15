@@ -1,0 +1,48 @@
+/* ═════════════════════════════════════════════════════════════════
+ * 기본 스타일
+ * ═════════════════════════════════════════════════════════════════ */
+body {
+	background: var(--color-bg);
+	color: var(--color-fg);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+ * 스크롤바 디자인
+ * ═════════════════════════════════════════════════════════════════ */
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-border-strong) var(--color-surface-alt);
+}
+
+/* Webkit 브라우저 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-surface-alt);
+	border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-border-strong);
+	border: 3px solid var(--color-surface-alt);
+	border-radius: 100vh;
+	transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-fg-muted);
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: var(--color-fg-secondary);
+}
+
+/* 가로 스크롤바 (필요한 경우) */
+::-webkit-scrollbar-corner {
+	background: var(--color-surface-alt);
+}

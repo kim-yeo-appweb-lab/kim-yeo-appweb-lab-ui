@@ -1,0 +1,168 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Overview" />
+
+# 디자인 시스템 개요
+
+**트렌드 코리아** 프론트엔드의 디자인 토큰 시스템입니다.
+대한민국 사건/이슈 타임라인 추적 서비스를 위한 일관된 시각 언어를 제공합니다.
+
+---
+
+## 3계층 토큰 아키텍처
+
+디자인 토큰은 **Raw → Alias → Semantic** 3단계 구조로 관리됩니다.
+
+| 계층                | 역할                        | 예시                          | 변경 빈도    |
+| ------------------- | --------------------------- | ----------------------------- | ------------ |
+| **Raw (Primitive)** | 순수 색상 스케일            | `primary-500`, `neutral-200`  | 거의 없음    |
+| **Alias (Brand)**   | Raw → 브랜드 의미 매핑      | `brand-primary = primary-500` | 리브랜딩 시  |
+| **Semantic (Role)** | UI 역할 기반, 다크모드 전환 | `bg-surface`, `text-fg`       | 테마 변경 시 |
+
+### 데이터 흐름
+
+```
+Raw 팔레트 (primary-500: #ff6b47)
+  ↓
+Alias 매핑 (brand-primary → primary-500)
+  ↓
+Semantic 토큰 (--color-primary → brand-primary)
+  ↓ 다크모드 시 다른 Raw 값 참조
+Tailwind 유틸리티 (bg-primary, text-primary-fg)
+```
+
+---
+
+## 브랜드 컬러
+
+### Primary — 코랄 오렌지
+
+에너지, 긴급성, 활력을 상징합니다. 뉴스/실시간 정보 서비스의 핵심 액센트로 사용됩니다.
+
+<div style={{ display: "flex", gap: "8px", marginBottom: "24px" }}>
+	<div
+		style={{
+			width: "80px",
+			height: "80px",
+			borderRadius: "12px",
+			background: "#ff6b47",
+			display: "flex",
+			alignItems: "flex-end",
+			padding: "8px"
+		}}
+	>
+		<span style={{ color: "#fff", fontSize: "11px", fontWeight: 600 }}>500</span>
+	</div>
+	<div
+		style={{
+			width: "80px",
+			height: "80px",
+			borderRadius: "12px",
+			background: "#f04e2a",
+			display: "flex",
+			alignItems: "flex-end",
+			padding: "8px"
+		}}
+	>
+		<span style={{ color: "#fff", fontSize: "11px", fontWeight: 600 }}>600</span>
+	</div>
+	<div
+		style={{
+			width: "80px",
+			height: "80px",
+			borderRadius: "12px",
+			background: "#cc3a1a",
+			display: "flex",
+			alignItems: "flex-end",
+			padding: "8px"
+		}}
+	>
+		<span style={{ color: "#fff", fontSize: "11px", fontWeight: 600 }}>700</span>
+	</div>
+</div>
+
+### Secondary — 딥 틸
+
+신뢰, 안정감, 균형을 상징합니다. 코랄 오렌지의 보색으로서 정보의 객관성을 보완합니다.
+
+<div style={{ display: "flex", gap: "8px", marginBottom: "24px" }}>
+	<div
+		style={{
+			width: "80px",
+			height: "80px",
+			borderRadius: "12px",
+			background: "#14b8a6",
+			display: "flex",
+			alignItems: "flex-end",
+			padding: "8px"
+		}}
+	>
+		<span style={{ color: "#fff", fontSize: "11px", fontWeight: 600 }}>500</span>
+	</div>
+	<div
+		style={{
+			width: "80px",
+			height: "80px",
+			borderRadius: "12px",
+			background: "#0d9488",
+			display: "flex",
+			alignItems: "flex-end",
+			padding: "8px"
+		}}
+	>
+		<span style={{ color: "#fff", fontSize: "11px", fontWeight: 600 }}>600</span>
+	</div>
+	<div
+		style={{
+			width: "80px",
+			height: "80px",
+			borderRadius: "12px",
+			background: "#0f766e",
+			display: "flex",
+			alignItems: "flex-end",
+			padding: "8px"
+		}}
+	>
+		<span style={{ color: "#fff", fontSize: "11px", fontWeight: 600 }}>700</span>
+	</div>
+</div>
+
+---
+
+## 파운데이션 구성
+
+| 카테고리       | 설명                       | 문서                                                   |
+| -------------- | -------------------------- | ------------------------------------------------------ |
+| **Colors**     | 7개 팔레트 + Semantic 토큰 | [Colors](?path=/docs/foundations-colors--docs)         |
+| **Typography** | Geist Sans 기반 15단계     | [Typography](?path=/docs/foundations-typography--docs) |
+| **Spacing**    | 4px 기반 16단계 스케일     | [Spacing](?path=/docs/foundations-spacing--docs)       |
+| **Radius**     | xs~full 7단계              | [Radius](?path=/docs/foundations-radius--docs)         |
+| **Shadows**    | level 0~4 (라이트/다크)    | [Shadows](?path=/docs/foundations-shadows--docs)       |
+
+---
+
+## Tailwind CSS 4 통합
+
+```css
+/* @theme: 정적 Raw 팔레트 → bg-primary-500 등 유틸리티 생성 */
+@theme {
+	--color-primary-500: #ff6b47;
+}
+
+/* @theme inline: CSS 변수 참조 → 런타임 다크모드 전환 */
+@theme inline {
+	--color-primary: var(--color-primary);
+}
+```
+
+| 블록            | 용도          | Tailwind 클래스                      |
+| --------------- | ------------- | ------------------------------------ |
+| `@theme`        | Raw 팔레트    | `bg-primary-500`, `text-neutral-700` |
+| `@theme inline` | Semantic 토큰 | `bg-surface`, `text-fg-muted`        |
+
+---
+
+## 참고 파일
+
+- `src/app/globals.css` — 전체 토큰 정의
+- `docs/DESIGN_TOKENS.md` — 토큰 레퍼런스 문서

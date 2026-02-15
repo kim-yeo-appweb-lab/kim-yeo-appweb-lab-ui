@@ -1,0 +1,148 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Radius" />
+
+# Border Radius
+
+7단계 라운딩 스케일로 요소의 형태감을 제어합니다.
+
+---
+
+## 스케일
+
+<div style={{ display: "flex", flexWrap: "wrap", gap: "24px", marginTop: "16px" }}>
+	{[
+		{ token: "xs", value: "2px", radius: 2 },
+		{ token: "sm", value: "4px", radius: 4 },
+		{ token: "md", value: "8px", radius: 8 },
+		{ token: "lg", value: "12px", radius: 12 },
+		{ token: "xl", value: "16px", radius: 16 },
+		{ token: "2xl", value: "24px", radius: 24 },
+		{ token: "full", value: "9999px", radius: 9999 }
+	].map((item) => (
+		<div key={item.token} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+			<div
+				style={{
+					width: "80px",
+					height: "80px",
+					borderRadius: `${item.radius}px`,
+					background: "#ff6b47",
+					opacity: 0.85
+				}}
+			/>
+			<code style={{ fontSize: "13px", fontFamily: "monospace" }}>radius-{item.token}</code>
+			<span style={{ fontSize: "12px", color: "#71717a" }}>{item.value}</span>
+		</div>
+	))}
+</div>
+
+---
+
+## 레퍼런스 테이블
+
+| 토큰   | CSS 변수        | 값       | Tailwind 클래스 | 용도                     |
+| ------ | --------------- | -------- | --------------- | ------------------------ |
+| `xs`   | `--radius-xs`   | `2px`    | `rounded-xs`    | 미세한 라운딩, 코드 블록 |
+| `sm`   | `--radius-sm`   | `4px`    | `rounded-sm`    | 입력 필드, 작은 버튼     |
+| `md`   | `--radius-md`   | `8px`    | `rounded-md`    | 카드, 버튼, 드롭다운     |
+| `lg`   | `--radius-lg`   | `12px`   | `rounded-lg`    | 모달, 대화상자           |
+| `xl`   | `--radius-xl`   | `16px`   | `rounded-xl`    | 큰 카드, 패널            |
+| `2xl`  | `--radius-2xl`  | `24px`   | `rounded-2xl`   | 특수 요소, 풀 카드       |
+| `full` | `--radius-full` | `9999px` | `rounded-full`  | 원형 (아바타, 배지, 필)  |
+
+---
+
+## 사용 예시
+
+<div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "16px" }}>
+	<div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+		<div
+			style={{
+				width: "120px",
+				height: "40px",
+				borderRadius: "4px",
+				border: "1px solid #e4e4e7",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				fontSize: "13px",
+				color: "#52525b"
+			}}
+		>
+			Input (sm)
+		</div>
+		<code style={{ fontSize: "12px", color: "#71717a" }}>rounded-sm</code>
+	</div>
+	<div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+		<div
+			style={{
+				height: "40px",
+				borderRadius: "8px",
+				background: "#ff6b47",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				padding: "0 20px",
+				fontSize: "13px",
+				color: "#fff",
+				fontWeight: 500
+			}}
+		>
+			Button (md)
+		</div>
+		<code style={{ fontSize: "12px", color: "#71717a" }}>rounded-md</code>
+	</div>
+	<div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+		<div
+			style={{
+				width: "200px",
+				height: "80px",
+				borderRadius: "12px",
+				border: "1px solid #e4e4e7",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				fontSize: "13px",
+				color: "#52525b"
+			}}
+		>
+			Card (lg)
+		</div>
+		<code style={{ fontSize: "12px", color: "#71717a" }}>rounded-lg</code>
+	</div>
+	<div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+		<div
+			style={{
+				height: "28px",
+				borderRadius: "9999px",
+				background: "#f0fdf4",
+				border: "1px solid #bbf7d0",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				padding: "0 12px",
+				fontSize: "12px",
+				color: "#22c55e",
+				fontWeight: 500
+			}}
+		>
+			Badge (full)
+		</div>
+		<code style={{ fontSize: "12px", color: "#71717a" }}>rounded-full</code>
+	</div>
+</div>
+
+---
+
+## 사용 가이드
+
+### 권장 매핑
+
+| 컴포넌트               | 라디우스        |
+| ---------------------- | --------------- |
+| 코드 블록, 인라인 코드 | `xs` (2px)      |
+| 입력 필드, 체크박스    | `sm` (4px)      |
+| 버튼, 드롭다운, 팝오버 | `md` (8px)      |
+| 카드, 모달, 대화상자   | `lg` (12px)     |
+| 큰 카드, 패널          | `xl` (16px)     |
+| 아바타, 상태 배지, 필  | `full` (9999px) |
