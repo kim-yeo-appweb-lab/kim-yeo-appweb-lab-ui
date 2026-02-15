@@ -1,14 +1,14 @@
-## Summary
+## 요약
 
 <!-- 이 PR에서 무엇을 변경했는지 간단히 설명 -->
 
-## Changes
+## 변경사항
 
 <!-- 주요 변경 사항을 나열 -->
 
 -
 
-## Test Plan
+## 체크리스트
 
 - [ ] `pnpm type:check` 통과
 - [ ] `pnpm lint` 통과
