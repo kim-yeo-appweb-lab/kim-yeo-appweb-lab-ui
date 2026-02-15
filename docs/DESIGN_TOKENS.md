@@ -1,6 +1,6 @@
 # 디자인 토큰
 
-@kim-yeo/ui는 Tailwind CSS 4의 `@theme` 블록을 활용한 3단계 토큰 시스템을 사용합니다.
+@kim-yeo-appweb-lab/ui는 Tailwind CSS 4의 `@theme` 블록을 활용한 3단계 토큰 시스템을 사용합니다.
 
 ## 토큰 아키텍처
 

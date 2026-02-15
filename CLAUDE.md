@@ -84,6 +84,6 @@ src/
 ## 소비자 사용법
 
 ```tsx
-import { Button, Card, ThemeProvider } from "@kim-yeo/ui";
-import "@kim-yeo/ui/styles";
+import { Button, Card, ThemeProvider } from "@kim-yeo-appweb-lab/ui";
+import "@kim-yeo-appweb-lab/ui/styles";
 ```

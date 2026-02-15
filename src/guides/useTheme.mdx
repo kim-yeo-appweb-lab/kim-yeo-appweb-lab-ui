@@ -18,7 +18,7 @@ import { Meta, Source } from "@storybook/addon-docs/blocks";
 <Source
 	language="tsx"
 	code={`// app/layout.tsx 또는 main.tsx
-import "@kim-yeo/ui/styles";`}
+import "@kim-yeo-appweb-lab/ui/styles";`}
 />
 
 ### 2. ThemeProvider 감싸기
@@ -27,7 +27,7 @@ import "@kim-yeo/ui/styles";`}
 
 <Source
 	language="tsx"
-	code={`import { ThemeProvider } from "@kim-yeo/ui";
+	code={`import { ThemeProvider } from "@kim-yeo-appweb-lab/ui";
 
 function App() {
 return (
@@ -47,7 +47,7 @@ return (
 
 <Source
 	language="tsx"
-	code={`import { useTheme } from "@kim-yeo/ui";
+	code={`import { useTheme } from "@kim-yeo-appweb-lab/ui";
 
 function ThemeSwitcher() {
 const { theme, setTheme } = useTheme();
@@ -118,7 +118,7 @@ const { theme, setTheme } = useTheme();
 
 <Source
 	language="tsx"
-	code={`import { ThemeProvider, ThemeToggle } from "@kim-yeo/ui";
+	code={`import { ThemeProvider, ThemeToggle } from "@kim-yeo-appweb-lab/ui";
 
 function App() {
 return (
@@ -147,7 +147,7 @@ return (
 	getSystemTheme,
 	getResolvedTheme,
 	type Theme,
-} from "@kim-yeo/ui";`}
+} from "@kim-yeo-appweb-lab/ui";`}
 />
 
 | 함수               | 반환 타입           | 설명                                            |

@@ -1,8 +1,8 @@
-# @kim-yeo/ui
+# @kim-yeo-appweb-lab/ui
 
 범용 디자인 시스템 - React 19 + Tailwind CSS 4 UI 컴포넌트 라이브러리
 
-[![npm version](https://img.shields.io/npm/v/@kim-yeo/ui.svg)](https://www.npmjs.com/package/@kim-yeo/ui)
+[![npm version](https://img.shields.io/npm/v/@kim-yeo-appweb-lab/ui.svg)](https://www.npmjs.com/package/@kim-yeo-appweb-lab/ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 특징
@@ -21,13 +21,13 @@
 
 ```bash
 # pnpm (권장)
-pnpm add @kim-yeo/ui
+pnpm add @kim-yeo-appweb-lab/ui
 
 # npm
-npm install @kim-yeo/ui
+npm install @kim-yeo-appweb-lab/ui
 
 # yarn
-yarn add @kim-yeo/ui
+yarn add @kim-yeo-appweb-lab/ui
 ```
 
 ### Peer Dependencies
@@ -45,7 +45,7 @@ pnpm add react@^19 react-dom@^19 tailwindcss@^4
 프로젝트의 엔트리포인트(예: `App.tsx` 또는 `main.tsx`)에 스타일을 import합니다:
 
 ```tsx
-import "@kim-yeo/ui/styles";
+import "@kim-yeo-appweb-lab/ui/styles";
 ```
 
 또는 CSS 파일에서:
@@ -53,7 +53,7 @@ import "@kim-yeo/ui/styles";
 ```css
 /* globals.css */
 @import "tailwindcss";
-@import "@kim-yeo/ui/styles";
+@import "@kim-yeo-appweb-lab/ui/styles";
 ```
 
 ### 2. ThemeProvider 설정
@@ -61,7 +61,7 @@ import "@kim-yeo/ui/styles";
 앱 최상단에 ThemeProvider를 추가합니다:
 
 ```tsx
-import { ThemeProvider } from "@kim-yeo/ui";
+import { ThemeProvider } from "@kim-yeo-appweb-lab/ui";
 
 function App() {
 	return <ThemeProvider>{/* 앱 컴포넌트 */}</ThemeProvider>;
@@ -71,7 +71,7 @@ function App() {
 ### 3. 컴포넌트 사용
 
 ```tsx
-import { Button, Card, Input } from "@kim-yeo/ui";
+import { Button, Card, Input } from "@kim-yeo-appweb-lab/ui";
 
 function MyComponent() {
 	return (
@@ -126,7 +126,7 @@ function MyComponent() {
 ### 버튼 variants
 
 ```tsx
-import { Button } from "@kim-yeo/ui";
+import { Button } from "@kim-yeo-appweb-lab/ui";
 
 <Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
@@ -138,7 +138,7 @@ import { Button } from "@kim-yeo/ui";
 ### Badge colorScheme
 
 ```tsx
-import { Badge } from "@kim-yeo/ui";
+import { Badge } from "@kim-yeo-appweb-lab/ui";
 
 <Badge colorScheme="green">성공</Badge>
 <Badge colorScheme="red">오류</Badge>
@@ -149,7 +149,7 @@ import { Badge } from "@kim-yeo/ui";
 ### 테마 전환
 
 ```tsx
-import { useTheme, ThemeToggle } from "@kim-yeo/ui";
+import { useTheme, ThemeToggle } from "@kim-yeo-appweb-lab/ui";
 
 function MyApp() {
 	const { theme, setTheme } = useTheme();
@@ -169,7 +169,7 @@ function MyApp() {
 ### 모달
 
 ```tsx
-import { Modal, Button } from "@kim-yeo/ui";
+import { Modal, Button } from "@kim-yeo-appweb-lab/ui";
 import { useState } from "react";
 
 function ModalExample() {
@@ -192,7 +192,7 @@ function ModalExample() {
 
 ## 커스터마이징
 
-@kim-yeo/ui는 3단계 토큰 시스템을 사용하여 유연한 커스터마이징을 지원합니다.
+@kim-yeo-appweb-lab/ui는 3단계 토큰 시스템을 사용하여 유연한 커스터마이징을 지원합니다.
 
 ### 디자인 토큰 오버라이드
 

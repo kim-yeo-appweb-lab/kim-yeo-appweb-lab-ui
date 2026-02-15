@@ -70,7 +70,7 @@ Storybook 문서 배포를 위해 GitHub Pages를 활성화합니다.
 `package.json`에서 패키지 이름이 npm에서 사용 가능한지 확인:
 
 ```bash
-npm view @kim-yeo/ui
+npm view @kim-yeo-appweb-lab/ui
 # 404 에러가 나와야 정상 (아직 배포 안 됨)
 ```
 
