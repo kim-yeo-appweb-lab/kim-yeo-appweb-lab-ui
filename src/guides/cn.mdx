@@ -11,10 +11,7 @@ Tailwind CSS 클래스를 안전하게 병합하는 유틸리티 함수입니다
 
 ## Import
 
-<Source
-	language="tsx"
-	code={`import { cn } from "@kim-yeo/ui";`}
-/>
+<Source language="tsx" code={`import { cn } from "@kim-yeo/ui";`} />
 
 ---
 
@@ -40,9 +37,9 @@ Tailwind CSS 클래스를 안전하게 병합하는 유틸리티 함수입니다
 const isDisabled = false;
 
 cn(
-	"px-4 py-2 rounded-md",
-	isActive && "bg-primary text-primary-fg",
-	isDisabled && "opacity-50 cursor-not-allowed"
+"px-4 py-2 rounded-md",
+isActive && "bg-primary text-primary-fg",
+isDisabled && "opacity-50 cursor-not-allowed"
 );
 // → "px-4 py-2 rounded-md bg-primary text-primary-fg"`}
 />
@@ -90,14 +87,16 @@ cn("bg-primary text-white", "bg-secondary");
 };
 
 function Card({ className, children }: CardProps) {
-	return (
-		<div className={cn("rounded-lg bg-surface p-4 shadow-level-1", className)}>
-			{children}
-		</div>
-	);
+return (
+
+<div className={cn("rounded-lg bg-surface p-4 shadow-level-1", className)}>
+{children}
+</div>
+);
 }
 
 // 소비자가 스타일을 오버라이드할 수 있음
+
 <Card className="p-8 shadow-level-3">
 	{/* p-4 → p-8, shadow-level-1 → shadow-level-3 으로 안전하게 교체 */}
 </Card>`}
@@ -107,10 +106,7 @@ function Card({ className, children }: CardProps) {
 
 ## API
 
-<Source
-	language="tsx"
-	code={`function cn(...inputs: ClassValue[]): string`}
-/>
+<Source language="tsx" code={`function cn(...inputs: ClassValue[]): string`} />
 
 | 파라미터    | 타입           | 설명                                           |
 | ----------- | -------------- | ---------------------------------------------- |

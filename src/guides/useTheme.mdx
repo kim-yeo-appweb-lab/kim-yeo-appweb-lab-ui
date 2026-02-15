@@ -30,11 +30,12 @@ import "@kim-yeo/ui/styles";`}
 	code={`import { ThemeProvider } from "@kim-yeo/ui";
 
 function App() {
-	return (
-		<ThemeProvider>
-			<YourApp />
-		</ThemeProvider>
-	);
+return (
+
+<ThemeProvider>
+<YourApp />
+</ThemeProvider>
+);
 }`}
 />
 
@@ -49,16 +50,17 @@ function App() {
 	code={`import { useTheme } from "@kim-yeo/ui";
 
 function ThemeSwitcher() {
-	const { theme, setTheme } = useTheme();
+const { theme, setTheme } = useTheme();
 
-	return (
-		<div>
-			<p>현재 테마: {theme}</p>
-			<button onClick={() => setTheme("light")}>라이트</button>
-			<button onClick={() => setTheme("dark")}>다크</button>
-			<button onClick={() => setTheme("system")}>시스템</button>
-		</div>
-	);
+    return (
+    	<div>
+    		<p>현재 테마: {theme}</p>
+    		<button onClick={() => setTheme("light")}>라이트</button>
+    		<button onClick={() => setTheme("dark")}>다크</button>
+    		<button onClick={() => setTheme("system")}>시스템</button>
+    	</div>
+    );
+
 }`}
 />
 
@@ -66,16 +68,13 @@ function ThemeSwitcher() {
 
 ## Theme 타입
 
-<Source
-	language="tsx"
-	code={`type Theme = "light" | "dark" | "system";`}
-/>
+<Source language="tsx" code={`type Theme = "light" | "dark" | "system";`} />
 
-| 값         | 동작                                                    |
-| ---------- | ------------------------------------------------------- |
-| `"light"`  | 라이트 모드 강제, `localStorage`에 저장                 |
-| `"dark"`   | 다크 모드 강제, `localStorage`에 저장                   |
-| `"system"` | OS 설정(`prefers-color-scheme`)을 따름, 저장하지 않음   |
+| 값         | 동작                                                  |
+| ---------- | ----------------------------------------------------- |
+| `"light"`  | 라이트 모드 강제, `localStorage`에 저장               |
+| `"dark"`   | 다크 모드 강제, `localStorage`에 저장                 |
+| `"system"` | OS 설정(`prefers-color-scheme`)을 따름, 저장하지 않음 |
 
 ---
 
@@ -90,26 +89,24 @@ function ThemeSwitcher() {
 </ThemeProvider>`}
 />
 
-| Prop       | 타입        | 설명                |
-| ---------- | ----------- | ------------------- |
-| `children` | `ReactNode` | 자식 컴포넌트 트리  |
+| Prop       | 타입        | 설명               |
+| ---------- | ----------- | ------------------ |
+| `children` | `ReactNode` | 자식 컴포넌트 트리 |
 
 **동작 방식:**
+
 - 마운트 시 `localStorage`에 저장된 테마를 복원하고, 없으면 시스템 설정을 따릅니다.
 - `document.documentElement`에 `data-theme`과 `colorScheme`을 설정합니다.
 - `"system"` 모드일 때는 `localStorage`에 저장하지 않습니다.
 
 ### useTheme
 
-<Source
-	language="tsx"
-	code={`const { theme, setTheme } = useTheme();`}
-/>
+<Source language="tsx" code={`const { theme, setTheme } = useTheme();`} />
 
-| 반환값     | 타입                      | 설명                    |
-| ---------- | ------------------------- | ----------------------- |
-| `theme`    | `Theme`                   | 현재 테마 값            |
-| `setTheme` | `(theme: Theme) => void`  | 테마 변경 함수          |
+| 반환값     | 타입                     | 설명           |
+| ---------- | ------------------------ | -------------- |
+| `theme`    | `Theme`                  | 현재 테마 값   |
+| `setTheme` | `(theme: Theme) => void` | 테마 변경 함수 |
 
 > `ThemeProvider` 외부에서 `useTheme`을 호출하면 에러가 발생합니다.
 
@@ -124,14 +121,15 @@ function ThemeSwitcher() {
 	code={`import { ThemeProvider, ThemeToggle } from "@kim-yeo/ui";
 
 function App() {
-	return (
-		<ThemeProvider>
-			<header>
-				<ThemeToggle />
-			</header>
-			<main>{/* ... */}</main>
-		</ThemeProvider>
-	);
+return (
+
+<ThemeProvider>
+<header>
+<ThemeToggle />
+</header>
+<main>{/* ... */}</main>
+</ThemeProvider>
+);
 }`}
 />
 
@@ -152,9 +150,9 @@ function App() {
 } from "@kim-yeo/ui";`}
 />
 
-| 함수               | 반환 타입              | 설명                                            |
-| ------------------ | ---------------------- | ----------------------------------------------- |
-| `getStoredTheme`   | `Theme \| null`        | `localStorage`에서 저장된 테마 값을 읽음        |
-| `setStoredTheme`   | `void`                 | `localStorage`에 테마 값을 저장                 |
-| `getSystemTheme`   | `"light" \| "dark"`    | OS의 `prefers-color-scheme` 설정을 반환         |
-| `getResolvedTheme` | `"light" \| "dark"`    | 저장된 테마 → 시스템 테마 순으로 최종 테마 결정 |
+| 함수               | 반환 타입           | 설명                                            |
+| ------------------ | ------------------- | ----------------------------------------------- |
+| `getStoredTheme`   | `Theme \| null`     | `localStorage`에서 저장된 테마 값을 읽음        |
+| `setStoredTheme`   | `void`              | `localStorage`에 테마 값을 저장                 |
+| `getSystemTheme`   | `"light" \| "dark"` | OS의 `prefers-color-scheme` 설정을 반환         |
+| `getResolvedTheme` | `"light" \| "dark"` | 저장된 테마 → 시스템 테마 순으로 최종 테마 결정 |
