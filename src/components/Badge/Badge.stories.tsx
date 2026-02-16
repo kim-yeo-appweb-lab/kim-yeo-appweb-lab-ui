@@ -17,7 +17,7 @@ const meta = {
 		},
 		colorScheme: {
 			control: "select",
-			options: ["default", "green", "red", "amber", "blue", "gray"]
+			options: ["default", "success", "danger", "warning", "info", "neutral"]
 		}
 	}
 } satisfies Meta<typeof Badge>;
@@ -32,42 +32,42 @@ export const Default: Story = {
 	}
 };
 
-/** 활성 상태 표시. */
-export const Green: Story = {
+/** 성공/활성 상태 표시. */
+export const Success: Story = {
 	args: {
-		colorScheme: "green",
+		colorScheme: "success",
 		children: "Active"
 	}
 };
 
 /** 긴급/에러 상태 표시. */
-export const Red: Story = {
+export const Danger: Story = {
 	args: {
-		colorScheme: "red",
+		colorScheme: "danger",
 		children: "Urgent"
 	}
 };
 
 /** 경고 상태 표시. */
-export const Amber: Story = {
+export const Warning: Story = {
 	args: {
-		colorScheme: "amber",
+		colorScheme: "warning",
 		children: "Warning"
 	}
 };
 
 /** 정보/신규 항목 표시. */
-export const Blue: Story = {
+export const Info: Story = {
 	args: {
-		colorScheme: "blue",
+		colorScheme: "info",
 		children: "NEW"
 	}
 };
 
 /** 비활성/종료 상태 표시. */
-export const Gray: Story = {
+export const Neutral: Story = {
 	args: {
-		colorScheme: "gray",
+		colorScheme: "neutral",
 		children: "Closed"
 	}
 };
@@ -76,7 +76,7 @@ export const Gray: Story = {
 export const OutlineVariant: Story = {
 	args: {
 		variant: "outline",
-		colorScheme: "green",
+		colorScheme: "success",
 		children: "Active"
 	}
 };
@@ -86,22 +86,22 @@ export const AllColorSchemes: Story = {
 	render: () => (
 		<div className="flex flex-wrap items-center gap-2">
 			<Badge>기본</Badge>
-			<Badge colorScheme="green">Green</Badge>
-			<Badge colorScheme="red">Red</Badge>
-			<Badge colorScheme="amber">Amber</Badge>
-			<Badge colorScheme="blue">Blue</Badge>
-			<Badge colorScheme="gray">Gray</Badge>
+			<Badge colorScheme="success">Success</Badge>
+			<Badge colorScheme="danger">Danger</Badge>
+			<Badge colorScheme="warning">Warning</Badge>
+			<Badge colorScheme="info">Info</Badge>
+			<Badge colorScheme="neutral">Neutral</Badge>
 		</div>
 	),
 	parameters: {
 		docs: {
 			source: {
 				code: `<Badge>기본</Badge>
-<Badge colorScheme="green">Green</Badge>
-<Badge colorScheme="red">Red</Badge>
-<Badge colorScheme="amber">Amber</Badge>
-<Badge colorScheme="blue">Blue</Badge>
-<Badge colorScheme="gray">Gray</Badge>`
+<Badge colorScheme="success">Success</Badge>
+<Badge colorScheme="danger">Danger</Badge>
+<Badge colorScheme="warning">Warning</Badge>
+<Badge colorScheme="info">Info</Badge>
+<Badge colorScheme="neutral">Neutral</Badge>`
 			}
 		}
 	}
@@ -112,20 +112,20 @@ export const AllOutlineColorSchemes: Story = {
 	render: () => (
 		<div className="flex flex-wrap items-center gap-2">
 			<Badge variant="outline">기본</Badge>
-			<Badge variant="outline" colorScheme="green">
-				Green
+			<Badge variant="outline" colorScheme="success">
+				Success
 			</Badge>
-			<Badge variant="outline" colorScheme="red">
-				Red
+			<Badge variant="outline" colorScheme="danger">
+				Danger
 			</Badge>
-			<Badge variant="outline" colorScheme="amber">
-				Amber
+			<Badge variant="outline" colorScheme="warning">
+				Warning
 			</Badge>
-			<Badge variant="outline" colorScheme="blue">
-				Blue
+			<Badge variant="outline" colorScheme="info">
+				Info
 			</Badge>
-			<Badge variant="outline" colorScheme="gray">
-				Gray
+			<Badge variant="outline" colorScheme="neutral">
+				Neutral
 			</Badge>
 		</div>
 	),
@@ -133,11 +133,11 @@ export const AllOutlineColorSchemes: Story = {
 		docs: {
 			source: {
 				code: `<Badge variant="outline">기본</Badge>
-<Badge variant="outline" colorScheme="green">Green</Badge>
-<Badge variant="outline" colorScheme="red">Red</Badge>
-<Badge variant="outline" colorScheme="amber">Amber</Badge>
-<Badge variant="outline" colorScheme="blue">Blue</Badge>
-<Badge variant="outline" colorScheme="gray">Gray</Badge>`
+<Badge variant="outline" colorScheme="success">Success</Badge>
+<Badge variant="outline" colorScheme="danger">Danger</Badge>
+<Badge variant="outline" colorScheme="warning">Warning</Badge>
+<Badge variant="outline" colorScheme="info">Info</Badge>
+<Badge variant="outline" colorScheme="neutral">Neutral</Badge>`
 			}
 		}
 	}
