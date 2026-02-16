@@ -2,7 +2,7 @@
 
 import { createContext, type ReactNode, useEffect, useState } from "react";
 
-import { getResolvedTheme, setStoredTheme, type Theme } from "../utils/theme";
+import { getResolvedTheme, setStoredTheme, type Theme } from "../utils";
 
 type ThemeContextType = {
 	theme: Theme;

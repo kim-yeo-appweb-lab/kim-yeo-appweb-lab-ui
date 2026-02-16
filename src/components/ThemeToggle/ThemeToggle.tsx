@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useState } from "react";
 
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../hooks";
 import { Button } from "../Button";
 
 export function ThemeToggle() {
