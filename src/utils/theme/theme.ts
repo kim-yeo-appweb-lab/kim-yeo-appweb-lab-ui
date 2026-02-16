@@ -8,10 +8,12 @@ export function getStoredTheme(): Theme | null {
 }
 
 export function setStoredTheme(theme: Theme): void {
+	if (typeof window === "undefined") return;
 	localStorage.setItem(STORAGE_KEY, theme);
 }
 
 export function getSystemTheme(): "light" | "dark" {
+	if (typeof window === "undefined") return "light";
 	return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
