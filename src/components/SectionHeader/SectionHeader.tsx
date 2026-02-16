@@ -1,14 +1,13 @@
-import { type ReactNode } from "react";
+import { type PropsWithChildren } from "react";
 
 import { cn } from "../../utils";
 
-type SectionHeaderProps = {
+type SectionHeaderProps = PropsWithChildren<{
 	title: string;
 	href?: string;
 	linkLabel?: string;
-	children?: ReactNode;
 	className?: string;
-};
+}>;
 
 export function SectionHeader({ title, href, linkLabel = "더보기", children, className }: SectionHeaderProps) {
 	return (
