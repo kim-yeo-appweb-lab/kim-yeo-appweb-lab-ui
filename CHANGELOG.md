@@ -1,5 +1,12 @@
 # @kim-yeo-appweb-lab/ui
 
+## 1.1.5
+
+### Patch Changes
+
+- [#16](https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui/pull/16) [`c39c394`](https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui/commit/c39c394d671c3986d6a376d40e9e383efb94db14) Thanks [@chan9yu](https://github.com/chan9yu)! - 빌드 시스템을 tsup에서 Rollup으로 마이그레이션하여 Next.js SSR에서 발생하는 `createContext is not a function` 에러를 해결한다.
+  - `preserveModules`로 소스 1:1 파일 구조를 유지하여 chunk 파일 생성을 방지하고 `"use client"` 지시어를 보존
+
 ## 1.1.4
 
 ### Patch Changes
