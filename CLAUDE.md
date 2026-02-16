@@ -5,15 +5,15 @@
 ## 프로젝트 개요
 
 - React 19 + TypeScript 5.9 + Tailwind CSS 4 기반 UI 컴포넌트 라이브러리
-- 빌드: tsup (ESM only)
+- 빌드: Rollup + esbuild (ESM only, preserveModules)
 - 패키지 매니저: pnpm
 - Node.js: v24.13.0 (.nvmrc)
 
 ## 스크립트
 
-- `pnpm dev` - 개발 모드 (tsup watch + Storybook 병렬 실행)
-- `pnpm build` - 프로덕션 빌드 (tsup)
-- `pnpm build:watch` - 빌드 watch 모드 (tsup --watch)
+- `pnpm dev` - 개발 모드 (Rollup watch + Storybook 병렬 실행)
+- `pnpm build` - 프로덕션 빌드 (Rollup + tsc)
+- `pnpm build:watch` - 빌드 watch 모드 (Rollup --watch)
 - `pnpm storybook` - Storybook 개발 서버 (port 6006)
 - `pnpm build-storybook` - Storybook 빌드
 - `pnpm lint` / `pnpm lint:fix` - ESLint
