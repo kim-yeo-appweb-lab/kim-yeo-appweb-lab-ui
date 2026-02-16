@@ -11,6 +11,7 @@
 
 ### 개발 가이드
 
+- [Git 브랜칭 전략](BRANCH_STRATEGY.md) - 브랜치 관리 및 워크플로우 가이드
 - [배포 가이드](DEPLOYMENT.md) - GitHub Actions를 통한 자동 배포 설정
 - [디자인 토큰](DESIGN_TOKENS.md) - 3단계 토큰 시스템 및 커스터마이징 가이드
 
