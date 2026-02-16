@@ -87,3 +87,10 @@ src/
 import { Button, Card, ThemeProvider } from "@kim-yeo-appweb-lab/ui";
 import "@kim-yeo-appweb-lab/ui/styles";
 ```
+
+## 참고 문서
+
+- `docs/BRANCH_STRATEGY.md` - Git 브랜칭 전략 및 워크플로우 가이드
+- `docs/DEPLOYMENT.md` - GitHub Actions 자동 배포 설정 가이드
+- `docs/DESIGN_TOKENS.md` - 3단계 토큰 시스템 및 커스터마이징 가이드
+- `docs/README.md` - 전체 문서 목차
