@@ -8,7 +8,7 @@ import {
 	type Ref
 } from "react";
 
-import { cn } from "./cn";
+import { cn } from "../cn";
 
 // ── 이벤트 핸들러 병합 ──
 // 원본 핸들러 실행 후 preventDefault가 호출되지 않았으면 추가 핸들러도 실행
