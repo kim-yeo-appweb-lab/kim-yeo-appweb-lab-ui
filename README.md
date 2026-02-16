@@ -71,6 +71,8 @@ import "@kim-yeo-appweb-lab/ui/styles";
 
 > **참고**: 라이브러리 스타일에 이미 Tailwind가 포함되어 있으므로, 라이브러리 컴포넌트만 사용한다면 별도로 `@import "tailwindcss";`를 추가할 필요가 없습니다.
 
+> **Tailwind 클래스 스캔**: 라이브러리 스타일에 `@source` 디렉티브가 포함되어 있어, 소비자 프로젝트에서 별도의 `content` 또는 `@source` 설정 없이도 라이브러리 컴포넌트의 Tailwind 클래스가 자동으로 생성됩니다.
+
 ### 2. ThemeProvider 설정
 
 앱 최상단에 ThemeProvider를 추가합니다:
@@ -380,6 +382,6 @@ MIT
 
 이슈와 PR을 환영합니다!
 
-- GitHub: https://github.com/kim-yeo-appweb-lab/kim-yeo-ui
-- Issues: https://github.com/kim-yeo-appweb-lab/kim-yeo-ui/issues
-- Storybook: https://kim-yeo-appweb-lab.github.io/kim-yeo-ui/
+- GitHub: https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui
+- Issues: https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui/issues
+- Storybook: https://kim-yeo-appweb-lab.github.io/kim-yeo-appweb-lab-ui/
