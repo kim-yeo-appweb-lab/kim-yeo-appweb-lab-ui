@@ -58,9 +58,9 @@ src/
 ├── utils/                # 유틸리티 함수
 │   └── index.ts
 ├── styles/               # 디자인 토큰 및 테마
-│   ├── tokens.css        # Raw Tokens + Alias Tokens
-│   ├── theme.css         # Semantic Tokens + 다크모드
-│   ├── base.css          # 기본 스타일
+│   ├── tokens.css        # Raw Tokens (@theme) + Alias Tokens (:root)
+│   ├── theme.css         # Semantic Tokens + 다크모드 값 전환 + @theme inline 등록
+│   ├── base.css          # 기본 스타일 + 스크롤바 + 테마 전환 애니메이션
 │   └── index.css         # 스타일 엔트리포인트
 ├── testing/              # 테스트 유틸리티
 │   ├── setup.ts          # 테스트 설정

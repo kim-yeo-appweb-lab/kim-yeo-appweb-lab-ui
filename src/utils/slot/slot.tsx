@@ -3,6 +3,7 @@ import {
 	cloneElement,
 	type HTMLAttributes,
 	isValidElement,
+	type PropsWithChildren,
 	type ReactElement,
 	type ReactNode,
 	type Ref
@@ -36,7 +37,7 @@ function composeRefs<T>(...refs: (Ref<T> | undefined)[]) {
 }
 
 // ── Slottable: Slot 내부에서 자식 콘텐츠를 표시하는 마커 ──
-export function Slottable({ children }: { children: ReactNode }) {
+export function Slottable({ children }: PropsWithChildren) {
 	return <>{children}</>;
 }
 

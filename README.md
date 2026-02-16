@@ -214,38 +214,34 @@ function ModalExample() {
 
 ### 디자인 토큰 오버라이드
 
-Tailwind CSS v4의 `@theme` 블록으로 브랜드 색상을 쉽게 변경할 수 있습니다:
+3단계 토큰 시스템(`@theme` Raw → `:root` Alias → `:root` Semantic)으로 유연한 커스터마이징이 가능합니다:
 
 #### 1. Raw 토큰 오버라이드 (전체 팔레트 변경)
 
-특정 색상의 모든 shade를 한 번에 변경:
+브랜드 색상으로 Primary 팔레트를 교체하면, Alias와 Semantic 토큰이 `var()` 참조를 통해 자동 반영됩니다:
 
 ```css
 @theme {
-	/* Primary 색상 전체 팔레트 변경 */
 	--color-primary-50: #f0f9ff;
 	--color-primary-100: #e0f2fe;
-	--color-primary-200: #bae6fd;
-	--color-primary-300: #7dd3fc;
-	--color-primary-400: #38bdf8;
-	--color-primary-500: #0ea5e9;
+	--color-primary-500: #0ea5e9; /* 브랜드 메인 색상 */
 	--color-primary-600: #0284c7;
-	--color-primary-700: #0369a1;
-	--color-primary-800: #075985;
 	--color-primary-900: #0c4a6e;
 }
 ```
 
-#### 2. Semantic 토큰 오버라이드 (특정 컴포넌트 색상)
+#### 2. Semantic 토큰 오버라이드 (역할별 색상 변경)
 
-특정 UI 요소의 색상만 변경:
+특정 UI 역할의 색상만 변경:
 
 ```css
-@theme {
-	/* 버튼 Primary variant 색상만 변경 */
-	--color-button-primary-bg: #06b6d4;
-	--color-button-primary-hover: #0891b2;
-	--color-button-primary-text: #ffffff;
+:root {
+	/* 페이지 배경색만 변경 */
+	--color-bg: #fafafa;
+	--color-surface: #ffffff;
+
+	/* 포커스 링 색상만 변경 */
+	--color-ring: #3b82f6;
 }
 ```
 
@@ -254,30 +250,11 @@ Tailwind CSS v4의 `@theme` 블록으로 브랜드 색상을 쉽게 변경할 �
 다크모드 전용 색상 오버라이드:
 
 ```css
-@theme {
-	/* 다크모드 배경색 커스터마이징 */
-	--color-background: #0a0a0a;
-	--color-card: #171717;
-
-	/* 다크모드 텍스트 색상 */
-	--color-foreground: #fafafa;
-	--color-muted-foreground: #a1a1aa;
-}
-```
-
-#### 4. 반응형 디자인 토큰
-
-```css
-@theme {
-	/* 모바일 우선 폰트 크기 */
-	--font-size-base: 14px;
-	--font-size-lg: 16px;
-
-	/* 태블릿 이상 */
-	@media (min-width: 768px) {
-		--font-size-base: 16px;
-		--font-size-lg: 18px;
-	}
+:root[data-theme="dark"] {
+	--color-bg: #0f172a;
+	--color-surface: #1e293b;
+	--color-border: #334155;
+	--color-fg: #f8fafc;
 }
 ```
 

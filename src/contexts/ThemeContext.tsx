@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, type ReactNode, useEffect, useState } from "react";
+import { createContext, type PropsWithChildren, useEffect, useState } from "react";
 
 import { getResolvedTheme, setStoredTheme, type Theme } from "../utils";
 
@@ -11,23 +11,46 @@ type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export function ThemeProvider({ children }: PropsWithChildren) {
 	const [theme, setThemeState] = useState<Theme>(() => getResolvedTheme() as Theme);
 
 	useEffect(() => {
 		const root = document.documentElement;
 		const resolved = getResolvedTheme(theme);
-		root.setAttribute("data-theme", resolved);
-		root.style.colorScheme = resolved;
+
+		// View Transition API 사용 (지원하는 브라우저)
+		const doc = document as Document & {
+			startViewTransition?: (callback: () => void) => void;
+		};
+
+		function updateTheme() {
+			root.setAttribute("data-theme", resolved);
+			root.style.colorScheme = resolved;
+		}
+
+		let rafId: number | undefined;
+
+		if (doc.startViewTransition) {
+			doc.startViewTransition(updateTheme);
+		} else {
+			root.setAttribute("data-theme-transitioning", "");
+			updateTheme();
+
+			rafId = requestAnimationFrame(() => {
+				root.removeAttribute("data-theme-transitioning");
+			});
+		}
 
 		if (theme !== "system") {
 			setStoredTheme(theme);
 		}
+
+		return () => {
+			if (rafId !== undefined) {
+				cancelAnimationFrame(rafId);
+			}
+		};
 	}, [theme]);
 
-	const setTheme = (newTheme: Theme) => {
-		setThemeState(newTheme);
-	};
-
-	return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
+	return <ThemeContext.Provider value={{ theme, setTheme: setThemeState }}>{children}</ThemeContext.Provider>;
 }

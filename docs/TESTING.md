@@ -120,9 +120,9 @@ export default defineConfig({
 
 테스트 실행 전 자동으로 로드되는 설정:
 
-- jest-dom matchers: `toBeInTheDocument()`, `toHaveClass()` 등 DOM 매칭 함수 확장
-- HTMLDialogElement 모킹: jsdom 미지원 `showModal()`, `close()` 메서드 폴리필
-- matchMedia 모킹: 미디어 쿼리 API 모킹
+- **jest-dom matchers**: `toBeInTheDocument()`, `toHaveClass()` 등 DOM 매칭 함수 확장
+- **HTMLDialogElement 모킹**: jsdom 미지원 `showModal()`, `close()` 메서드 폴리필
+- **matchMedia 모킹**: 미디어 쿼리 API 모킹 (테마 감지 테스트용)
 
 ### 테스트 유틸리티 (`src/testing/render.tsx`)
 
@@ -430,6 +430,16 @@ jsdom 미지원 브라우저 API는 `src/testing/setup.ts`에서 모킹:
 // 예: HTMLDialogElement
 HTMLDialogElement.prototype.showModal = vi.fn(function (this: HTMLDialogElement) {
 	this.setAttribute("open", "");
+});
+
+// 예: matchMedia
+Object.defineProperty(window, "matchMedia", {
+	writable: true,
+	value: vi.fn().mockImplementation((query: string) => ({
+		matches: false,
+		media: query
+		/* ... */
+	}))
 });
 ```
 

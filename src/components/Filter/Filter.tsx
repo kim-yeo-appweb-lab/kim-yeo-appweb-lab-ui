@@ -1,5 +1,7 @@
 "use client";
 
+import { type PropsWithChildren } from "react";
+
 import { cn } from "../../utils";
 
 type FilterOption<T extends string> = {
@@ -47,10 +49,9 @@ export function Filter<T extends string>({ label, options, value, onChange, clas
 	);
 }
 
-type FilterGroupProps = {
-	children: React.ReactNode;
+type FilterGroupProps = PropsWithChildren<{
 	className?: string;
-};
+}>;
 
 export function FilterGroup({ children, className }: FilterGroupProps) {
 	return (

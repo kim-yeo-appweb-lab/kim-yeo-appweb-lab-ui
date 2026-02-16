@@ -1,10 +1,10 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
-import { type ReactNode } from "react";
+import { type PropsWithChildren } from "react";
 
 import { ThemeProvider } from "../../contexts";
 import { useTheme } from "./useTheme";
 
-function wrapper({ children }: { children: ReactNode }) {
+function wrapper({ children }: PropsWithChildren) {
 	return <ThemeProvider>{children}</ThemeProvider>;
 }
 

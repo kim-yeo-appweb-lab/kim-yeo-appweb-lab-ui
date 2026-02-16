@@ -1,6 +1,6 @@
 import { render, type RenderOptions, type RenderResult, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { type ReactElement, type ReactNode } from "react";
+import { type PropsWithChildren, type ReactElement } from "react";
 
 import { ThemeProvider } from "../contexts";
 
@@ -8,7 +8,7 @@ type CustomRenderResult = RenderResult & {
 	user: ReturnType<typeof userEvent.setup>;
 };
 
-function AllProviders({ children }: { children: ReactNode }) {
+function AllProviders({ children }: PropsWithChildren) {
 	return <ThemeProvider>{children}</ThemeProvider>;
 }
 

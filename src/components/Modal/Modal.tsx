@@ -1,17 +1,16 @@
 "use client";
 
-import { type ReactNode, type Ref, useEffect, useRef } from "react";
+import { type PropsWithChildren, type Ref, useEffect, useRef } from "react";
 
 import { cn } from "../../utils";
 
-type ModalProps = {
+type ModalProps = PropsWithChildren<{
 	open: boolean;
 	onClose: () => void;
 	title?: string;
-	children: ReactNode;
 	className?: string;
 	ref?: Ref<HTMLDialogElement>;
-};
+}>;
 
 export function Modal({ open, onClose, title, children, className, ref }: ModalProps) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
