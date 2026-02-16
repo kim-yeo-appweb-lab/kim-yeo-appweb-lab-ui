@@ -65,7 +65,20 @@ Storybook 문서 배포를 위해 GitHub Pages를 활성화합니다.
 2. Source: **GitHub Actions** 선택
 3. 저장
 
-### 3. npm 패키지 이름 확인
+### 3. GitHub Actions 권한 설정
+
+**중요:** Changesets가 Release PR을 자동 생성하려면 GitHub Actions에 PR 생성 권한이 필요합니다.
+
+1. Repository Settings → Actions → General
+2. **Workflow permissions** 섹션으로 스크롤
+3. 다음 옵션 선택:
+   - ✅ **Read and write permissions**
+   - ✅ **Allow GitHub Actions to create and approve pull requests** (체크박스 활성화)
+4. **Save** 클릭
+
+**경로:** `https://github.com/{owner}/{repo}/settings/actions`
+
+### 4. npm 패키지 이름 확인
 
 `package.json`에서 패키지 이름이 npm에서 사용 가능한지 확인:
 
