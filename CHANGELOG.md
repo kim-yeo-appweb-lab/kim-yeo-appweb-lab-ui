@@ -1,5 +1,21 @@
 # @kim-yeo-appweb-lab/ui
 
+## 1.1.3
+
+### Patch Changes
+
+- [#14](https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui/pull/14) [`273946f`](https://github.com/kim-yeo-appweb-lab/kim-yeo-appweb-lab-ui/commit/273946fc49450a430b24d48e6d39186d6e9b3fd3) Thanks [@chan9yu](https://github.com/chan9yu)! - 테마 전환 시스템 및 타입 안정성 개선
+
+  **개선 사항:**
+  - View Transition API 통합으로 부드러운 테마 전환 (지원 브라우저)
+  - requestAnimationFrame cleanup 추가로 메모리 누수 방지
+  - PropsWithChildren 패턴으로 코드 일관성 향상
+  - 테스트 유틸리티 타입 정의 명시화
+
+  **문서:**
+  - 디자인 토큰 문서를 실제 코드와 100% 일치하도록 전면 재작성
+  - 3계층 토큰 시스템 상세 설명 추가
+
 ## 1.1.2
 
 ### Patch Changes
