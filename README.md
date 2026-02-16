@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="./public/profile-picture.png" alt="kim-yeo-appweb-lab" width="120" height="120" />
+
 # @kim-yeo-appweb-lab/ui
 
 범용 디자인 시스템 - React 19 + Tailwind CSS 4 UI 컴포넌트 라이브러리
@@ -5,15 +8,17 @@
 [![npm version](https://img.shields.io/npm/v/@kim-yeo-appweb-lab/ui.svg)](https://www.npmjs.com/package/@kim-yeo-appweb-lab/ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+</div>
+
 ## 특징
 
-- ✅ **React 19+** - 최신 React 기능 지원 (ref as prop, "use client" 등)
-- ✅ **Tailwind CSS 4+** - @theme 블록 기반 디자인 토큰 시스템
-- ✅ **프레임워크 독립적** - Next.js, Vite, CRA 모두 지원
-- ✅ **TypeScript** - 완전한 타입 정의 제공
-- ✅ **다크모드** - ThemeProvider 기반 테마 시스템
-- ✅ **Tree-shakeable** - ESM 빌드로 번들 크기 최적화
-- ✅ **접근성** - WAI-ARIA 표준 준수
+- **React 19+** - ref as prop, "use client" 등 최신 기능 지원
+- **Tailwind CSS 4+** - @theme 블록 기반 디자인 토큰 시스템
+- **프레임워크 독립적** - Next.js, Vite, CRA 모두 지원
+- **TypeScript** - 완전한 타입 정의
+- **다크모드** - ThemeProvider 기반 테마 시스템
+- **Tree-shakeable** - ESM 빌드로 번들 크기 최적화
+- **접근성** - WAI-ARIA 표준 준수
 
 ## 설치
 
@@ -42,19 +47,29 @@ pnpm add react@^19 react-dom@^19 tailwindcss@^4
 
 ### 1. 스타일 import
 
-프로젝트의 엔트리포인트(예: `App.tsx` 또는 `main.tsx`)에 스타일을 import합니다:
+**권장 방법** - JS/TS 파일에서 import:
 
 ```tsx
+// main.tsx 또는 App.tsx
 import "@kim-yeo-appweb-lab/ui/styles";
 ```
 
-또는 CSS 파일에서:
+**대안** - CSS 파일에서 import:
+
+```css
+/* globals.css - 라이브러리만 사용하는 경우 */
+@import "@kim-yeo-appweb-lab/ui/styles";
+```
+
+**프로젝트에서 Tailwind를 함께 사용하는 경우:**
 
 ```css
 /* globals.css */
-@import "tailwindcss";
-@import "@kim-yeo-appweb-lab/ui/styles";
+@import "tailwindcss"; /* 프로젝트의 커스텀 스타일을 위해 */
+@import "@kim-yeo-appweb-lab/ui/styles"; /* 라이브러리 스타일 */
 ```
+
+> **참고**: 라이브러리 스타일에 이미 Tailwind가 포함되어 있으므로, 라이브러리 컴포넌트만 사용한다면 별도로 `@import "tailwindcss";`를 추가할 필요가 없습니다.
 
 ### 2. ThemeProvider 설정
 
@@ -108,7 +123,7 @@ function MyComponent() {
 ### 데이터 표시
 
 - **Avatar** - 사용자 아바타
-- **Badge** - 라벨 배지 (다양한 colorScheme 지원)
+- **Badge** - 라벨 배지 (success, danger, warning, info, neutral 지원)
 - **EmptyState** - 빈 상태 표시
 - **Skeleton** - 로딩 스켈레톤
 
@@ -140,10 +155,11 @@ import { Button } from "@kim-yeo-appweb-lab/ui";
 ```tsx
 import { Badge } from "@kim-yeo-appweb-lab/ui";
 
-<Badge colorScheme="green">성공</Badge>
-<Badge colorScheme="red">오류</Badge>
-<Badge colorScheme="amber">경고</Badge>
-<Badge colorScheme="blue">정보</Badge>
+<Badge colorScheme="success">성공</Badge>
+<Badge colorScheme="danger">오류</Badge>
+<Badge colorScheme="warning">경고</Badge>
+<Badge colorScheme="info">정보</Badge>
+<Badge colorScheme="neutral">비활성</Badge>
 ```
 
 ### 테마 전환
@@ -285,7 +301,7 @@ Tailwind CSS v4의 `@theme` 블록으로 브랜드 색상을 쉽게 변경할 �
 {
 	/* 애니메이션 추가 */
 }
-<Badge className="transition-all hover:scale-110" colorScheme="green">
+<Badge className="transition-all hover:scale-110" colorScheme="success">
 	호버 애니메이션
 </Badge>;
 
@@ -323,10 +339,28 @@ pnpm dev
 
 # Storybook 실행
 pnpm storybook
-
-# 테스트
-pnpm test:watch
 ```
+
+### 테스트
+
+Vitest + Testing Library 기반 테스트 환경을 제공합니다:
+
+```bash
+# 전체 테스트 실행
+pnpm test
+
+# Watch 모드 (개발 중 권장)
+pnpm test:watch
+
+# 커버리지 포함 실행
+pnpm test -- --coverage
+```
+
+- **테스트 전략**: 사용자 관점의 통합 테스트 중심 (Testing Trophy)
+- **커버리지 기준**: Statements, Branches, Functions, Lines 각 80%
+- **테스트 파일 위치**: 소스 파일과 같은 디렉토리에 `*.test.tsx` 형식으로 작성
+
+자세한 내용은 [테스트 가이드](docs/TESTING.md)를 참고하세요.
 
 ### 배포
 
