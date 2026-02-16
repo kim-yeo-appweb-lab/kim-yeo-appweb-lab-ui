@@ -4,7 +4,7 @@ import { cn } from "../../utils";
 
 type BadgeVariant = "subtle" | "outline";
 
-type BadgeColorScheme = "default" | "green" | "red" | "amber" | "blue" | "gray";
+type BadgeColorScheme = "default" | "success" | "danger" | "warning" | "info" | "neutral";
 
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
 	variant?: BadgeVariant;
@@ -17,25 +17,25 @@ const colorSchemeStyles: Record<BadgeColorScheme, Record<BadgeVariant, string>> 
 		subtle: "bg-surface-alt text-fg-secondary",
 		outline: "border-border text-fg-secondary border"
 	},
-	green: {
-		subtle: "bg-green-500/10 text-green-700 dark:text-green-400",
-		outline: "border-green-600 text-green-700 dark:text-green-400 border"
+	success: {
+		subtle: "bg-success-500/10 text-success-700 dark:text-success-400",
+		outline: "border-success-600 text-success-700 dark:text-success-400 border"
 	},
-	red: {
-		subtle: "bg-red-500/10 text-red-700 dark:text-red-400",
-		outline: "border-red-600 text-red-700 dark:text-red-400 border"
+	danger: {
+		subtle: "bg-danger-500/10 text-danger-700 dark:text-danger-400",
+		outline: "border-danger-600 text-danger-700 dark:text-danger-400 border"
 	},
-	amber: {
-		subtle: "bg-amber-500/10 text-amber-700 dark:text-amber-400",
-		outline: "border-amber-600 text-amber-700 dark:text-amber-400 border"
+	warning: {
+		subtle: "bg-warning-500/10 text-warning-700 dark:text-warning-400",
+		outline: "border-warning-600 text-warning-700 dark:text-warning-400 border"
 	},
-	blue: {
-		subtle: "bg-blue-500/10 text-blue-700 dark:text-blue-400",
-		outline: "border-blue-600 text-blue-700 dark:text-blue-400 border"
+	info: {
+		subtle: "bg-info-500/10 text-info-700 dark:text-info-400",
+		outline: "border-info-600 text-info-700 dark:text-info-400 border"
 	},
-	gray: {
-		subtle: "bg-gray-500/10 text-gray-700 dark:text-gray-400",
-		outline: "border-gray-600 text-gray-700 dark:text-gray-400 border"
+	neutral: {
+		subtle: "bg-neutral-500/10 text-neutral-700 dark:text-neutral-400",
+		outline: "border-neutral-600 text-neutral-700 dark:text-neutral-400 border"
 	}
 };
 

@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from "@storybook/react";
 
-import { ThemeProvider } from "../../contexts/ThemeContext";
+import { ThemeProvider } from "../../contexts";
 import { ThemeToggle } from "./ThemeToggle";
 
 /**

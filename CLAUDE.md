@@ -62,6 +62,9 @@ src/
 │   ├── theme.css         # Semantic Tokens + 다크모드
 │   ├── base.css          # 기본 스타일
 │   └── index.css         # 스타일 엔트리포인트
+├── testing/              # 테스트 유틸리티
+│   ├── setup.ts          # 테스트 설정
+│   └── render.tsx        # 커스텀 렌더링 유틸리티
 └── index.ts              # 메인 엔트리포인트
 ```
 
@@ -72,6 +75,50 @@ src/
 - 스토리: `[ComponentName].stories.tsx`
 - 테스트: `[name].test.tsx`
 - 배럴 파일: `index.ts`로 re-export
+
+## 테스트
+
+### 테스트 전략
+
+- **테스트 트로피** 전략 채택: 통합 테스트 중심 (사용자 관점)
+- 정적 분석(TypeScript, ESLint) → 단위 테스트 → 통합 테스트 → E2E 순서
+- 통합 테스트 60%, 단위 테스트 30%, E2E 10% 비중
+
+### 테스트 도구
+
+- Vitest + jsdom + @testing-library/react + @testing-library/user-event
+- 커스텀 렌더 유틸리티: `src/testing/render.tsx`
+- 테스트 setup: `src/testing/setup.ts`
+
+### 테스트 작성 규칙
+
+- 테스트 파일은 소스 파일과 같은 디렉토리에 위치 (colocation)
+- 네이밍: `[name].test.tsx` (컴포넌트), `[name].test.ts` (유틸리티/훅)
+- `describe` - `it` 패턴, 테스트명은 한국어로 작성
+- `render`, `screen`, `userEvent`는 `src/testing/render.tsx`에서 import
+- `fireEvent` 대신 `userEvent` 사용
+- DOM 쿼리 우선순위: `getByRole` > `getByLabelText` > `getByText` > `getByTestId`
+- 내부 구현이 아닌 사용자 관점으로 테스트 (CSS 선택자, 내부 상태 직접 접근 금지)
+- 스냅샷 테스트 사용 금지
+
+### 커버리지
+
+- 최소 기준: Statements, Branches, Functions, Lines 각 80%
+- 커버리지 제외: stories, test 파일, index.ts(배럴), testing/\*\*
+
+### TDD 워크플로우
+
+1. 실패하는 테스트 작성 (Red)
+2. 테스트를 통과하는 최소한의 코드 작성 (Green)
+3. 리팩토링 (Refactor)
+4. `pnpm test:watch`로 실시간 피드백 확인
+
+### 새 컴포넌트 추가 시
+
+1. `ComponentName.test.tsx` 테스트 파일 먼저 생성
+2. 기본 렌더링, props, 사용자 상호작용, 접근성 테스트 작성
+3. 컴포넌트 구현
+4. `pnpm test` 전체 통과 확인
 
 ## 아키텍처 원칙
 
@@ -93,4 +140,5 @@ import "@kim-yeo-appweb-lab/ui/styles";
 - `docs/BRANCH_STRATEGY.md` - Git 브랜칭 전략 및 워크플로우 가이드
 - `docs/DEPLOYMENT.md` - GitHub Actions 자동 배포 설정 가이드
 - `docs/DESIGN_TOKENS.md` - 3단계 토큰 시스템 및 커스터마이징 가이드
+- `docs/TESTING.md` - 테스트 전략, 작성 가이드라인, 실행 방법
 - `docs/README.md` - 전체 문서 목차

@@ -32,7 +32,8 @@ const meta = {
 	args: {
 		label: "기간",
 		options: periodOptions,
-		value: "all"
+		value: "all",
+		onChange: () => {}
 	},
 	render: function Render(args) {
 		const [, updateArgs] = useArgs();
@@ -50,6 +51,7 @@ type Story = StoryObj<typeof meta>;
 
 /** 기간 필터. 기본 사용 예시이다. */
 export const Default: Story = {
+	args: {},
 	parameters: {
 		docs: {
 			source: {

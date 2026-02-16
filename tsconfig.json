@@ -4,6 +4,7 @@
 		"target": "ES2022",
 		"lib": ["dom", "dom.iterable", "ES2022"],
 		"jsx": "react-jsx",
+		"types": ["vitest/globals"],
 
 		/* Modules */
 		"module": "ESNext",
@@ -35,5 +36,5 @@
 		"skipLibCheck": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx"],
-	"exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx"]
+	"exclude": ["node_modules", "dist", "**/*.stories.tsx"]
 }
