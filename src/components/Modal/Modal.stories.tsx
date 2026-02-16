@@ -15,7 +15,8 @@ const meta = {
 	args: {
 		open: false,
 		title: "모달 제목",
-		children: "모달 본문 내용입니다."
+		children: "모달 본문 내용입니다.",
+		onClose: () => {}
 	},
 	argTypes: {
 		open: {
@@ -50,6 +51,7 @@ type Story = StoryObj<typeof meta>;
 
 /** 기본 모달. 제목과 본문을 포함한다. */
 export const Default: Story = {
+	args: {},
 	parameters: {
 		docs: {
 			source: {
