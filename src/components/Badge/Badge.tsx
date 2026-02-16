@@ -18,23 +18,23 @@ const colorSchemeStyles: Record<BadgeColorScheme, Record<BadgeVariant, string>> 
 		outline: "border-border text-fg-secondary border"
 	},
 	success: {
-		subtle: "bg-success-500/10 text-success-700 dark:text-success-400",
+		subtle: "bg-success-500/15 text-success-700 dark:text-success-400",
 		outline: "border-success-600 text-success-700 dark:text-success-400 border"
 	},
 	danger: {
-		subtle: "bg-danger-500/10 text-danger-700 dark:text-danger-400",
+		subtle: "bg-danger-500/15 text-danger-700 dark:text-danger-400",
 		outline: "border-danger-600 text-danger-700 dark:text-danger-400 border"
 	},
 	warning: {
-		subtle: "bg-warning-500/10 text-warning-700 dark:text-warning-400",
+		subtle: "bg-warning-500/15 text-warning-700 dark:text-warning-400",
 		outline: "border-warning-600 text-warning-700 dark:text-warning-400 border"
 	},
 	info: {
-		subtle: "bg-info-500/10 text-info-700 dark:text-info-400",
+		subtle: "bg-info-500/15 text-info-700 dark:text-info-400",
 		outline: "border-info-600 text-info-700 dark:text-info-400 border"
 	},
 	neutral: {
-		subtle: "bg-neutral-500/10 text-neutral-700 dark:text-neutral-400",
+		subtle: "bg-neutral-500/15 text-neutral-700 dark:text-neutral-400",
 		outline: "border-neutral-600 text-neutral-700 dark:text-neutral-400 border"
 	}
 };
