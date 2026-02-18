@@ -2,13 +2,27 @@ import { type HTMLAttributes, type Ref } from "react";
 
 import { cn } from "../../utils";
 
+type CardPadding = "sm" | "md" | "lg" | "responsive";
+
 type CardRootProps = HTMLAttributes<HTMLDivElement> & {
+	padding?: CardPadding;
 	ref?: Ref<HTMLDivElement>;
 };
 
-function CardRoot({ className, ref, children, ...rest }: CardRootProps) {
+const paddingStyles: Record<CardPadding, string> = {
+	sm: "p-3",
+	md: "p-4",
+	lg: "p-6",
+	responsive: "p-3 sm:p-4 lg:p-6"
+};
+
+function CardRoot({ padding = "md", className, ref, children, ...rest }: CardRootProps) {
 	return (
-		<div ref={ref} className={cn("border-border bg-surface shadow-level-1 rounded-xl border p-4", className)} {...rest}>
+		<div
+			ref={ref}
+			className={cn("border-border bg-surface shadow-level-1 rounded-xl border", paddingStyles[padding], className)}
+			{...rest}
+		>
 			{children}
 		</div>
 	);
